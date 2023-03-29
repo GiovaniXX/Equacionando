@@ -18,12 +18,13 @@ public class EquacaoPrimeiroGrau {
                 return "A equação é impossível.";
             }
         } else {
-            String resolucao = "Resolução da equação :\n" + a + "x + " + b + " = 0:\n";
-            resolucao += a + "x = " + (-b) + "\n";
             double x = -b / a;
+            String resolucao = "Resolução da equação " + a + "x + " + b + " = 0:\n";
+            resolucao += "Aplicando a propriedade da igualdade, obtemos:\n";
+            resolucao += a + "x = " + -b + "\n";
+            resolucao += "Dividindo ambos os lados da equação por " + a + ", temos:\n";
             resolucao += "x = " + x + "\n";
-            resolucao += "A solução da equação é : \n x = " + x;
-
+            resolucao += "Portanto, a solução da equação é x = " + x;
             return resolucao;
         }
     }
