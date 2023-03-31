@@ -1,0 +1,104 @@
+/*
+Segue abaixo alguns exemplos de casos de teste adicionais que podem ser incluídos para aumentar a cobertura do teste:
+Testar uma equação em que a solução é um número decimal:
+*/
+
+@Test
+public void testResolverEquacaoComDecimal() {
+    double a = 3.5;
+    double b = 1.5;
+    double resultadoEsperado = -b/a;
+    String resultado = JTextPaneTeste.resolverEquacao(a, b);
+    assertThat(resultado, containsString("Portanto, a solução da equação é x = " + resultadoEsperado));
+}
+
+/*
+Testar uma equação em que a solução é zero:
+*/
+
+@Test
+public void testResolverEquacaoComSolucaoZero() {
+    double a = 0;
+    double b = 0;
+    String resultado = JTextPaneTeste.resolverEquacao(a, b);
+    assertThat(resultado, containsString("A equação é indeterminada."));
+}
+
+/*
+Testar uma equação em que a solução é infinita:
+*/
+
+@Test
+public void testResolverEquacaoComSolucaoInfinita() {
+    double a = 0;
+    double b = 5;
+    String resultado = JTextPaneTeste.resolverEquacao(a, b);
+    assertThat(resultado, containsString("A equação é impossível."));
+}
+
+/*
+Testar uma equação com valores negativos:
+*/
+
+@Test
+public void testResolverEquacaoComValoresNegativos() {
+    double a = -4;
+    double b = 8;
+    double resultadoEsperado = -b/a;
+    String resultado = JTextPaneTeste.resolverEquacao(a, b);
+    assertThat(resultado, containsString("Portanto, a solução da equação é x = " + resultadoEsperado));
+}
+
+/*
+Importar as bibliotecas necessárias para realizar as asserções. 
+Além disso, é importante que o método resolverEquacao() seja modificado para 
+retornar uma string, em vez de imprimir a solução na saída padrão.
+*/
+
+/*
+Para testar se a cor está sendo aplicada corretamente ao texto, você precisa de um teste de 
+GUI ou E2E que execute o aplicativo e verifique se o texto é exibido com a cor esperada. 
+Você pode usar uma ferramenta de teste de interface gráfica, como o Selenium WebDriver, 
+para simular a interação do usuário com o aplicativo.
+
+Exemplo de como você pode testar se a cor está sendo aplicada corretamente usando o Selenium WebDriver em um teste de integração:
+*/
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import static org.junit.Assert.assertEquals;
+
+public class JTextPaneTesteIT {
+
+    @Test
+    public void testAplicarCor() {
+        System.setProperty("webdriver.chrome.driver", "caminho/para/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.get("file:///caminho/para/o/arquivo/teste.html"); // substitua pelo caminho para o arquivo HTML que contém o JTextPane
+
+        WebElement elemento = driver.findElement(By.id("id-do-elemento-jtextpane")); // substitua pelo ID do elemento JTextPane
+
+        String textoEsperado = "Toda equação do 1° Grau tem que ser igual a 0 para que seja verdadeira.";
+        String corEsperada = "rgb(255, 0, 102)"; // substitua pela cor esperada em formato RGB
+
+        assertEquals(corEsperada, elemento.getCssValue("color")); // verifica se a cor aplicada é a cor esperada
+        assertEquals(textoEsperado, elemento.getText()); // verifica se o texto exibido é o texto esperado
+
+        driver.quit();
+    }
+}
+
+/*
+Nesse exemplo, você precisa substituir o caminho para o arquivo HTML que contém o JTextPane e 
+o ID do elemento JTextPane pelo caminho e ID reais do seu aplicativo. Certifique-se de que a cor 
+esperada esteja em formato RGB e seja igual à cor que você espera ver no texto.
+
+Lembre-se de que os testes de GUI e E2E são mais lentos e mais complexos do que os testes unitários, 
+portanto, é importante usar esses tipos de teste com sabedoria e apenas quando necessário. Testes unitários 
+devem ser a base de sua estratégia de teste, enquanto os testes de GUI e E2E devem ser usados para testar 
+casos de uso críticos e validar a funcionalidade geral do aplicativo.
+*/
