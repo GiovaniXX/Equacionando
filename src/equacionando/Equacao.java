@@ -5,8 +5,10 @@ import classes.EquacaoQuartoGrau;
 import classes.EquacaoSegundoGrau;
 import classes.EquacaoTerceiroGrau;
 import com.formdev.flatlaf.IntelliJTheme;
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 public class Equacao extends javax.swing.JFrame {
 
@@ -313,6 +315,26 @@ public class Equacao extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox_SelecionarEquacaoActionPerformed
 
     private void jTextField_AKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_AKeyPressed
+//        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+//            JTextField source = (JTextField) evt.getSource();
+//            source.setBackground(new Color(255, 0, 102));
+//
+//            switch (source.getName()) {
+//                case "jTextField_A" ->
+//                    jTextField_B.requestFocus();
+//                case "jTextField_B" ->
+//                    jTextField_C.requestFocus();
+//                case "jTextField_C" ->
+//                    jTextField_D.requestFocus();
+//                case "jTextField_D" ->
+//                    jTextField_E.requestFocus();
+//                case "jTextField_E" ->
+//                    jButton_CalcularEquacao.requestFocus(); // ou qualquer outro componente apropriado
+//                default -> {
+//                }
+//            }
+//        }
+
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             jTextField_B.requestFocus();
         }
