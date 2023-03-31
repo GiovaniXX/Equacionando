@@ -1,17 +1,19 @@
 package classes;
 
 import cores.GerenciaCorRGB;
+import org.junit.*;
 
-public class EquacaoDoPrimeiroGrau {
+public class JTextPaneTeste {
 
     private final double a;
     private final double b;
 
-    public EquacaoDoPrimeiroGrau(double a, double b) {
+    public JTextPaneTeste(double a, double b) {
         this.a = a;
         this.b = b;
     }
 
+    @Test
     public String resolverEquacao() {
         if (a == 0) {
             if (b == 0) {
