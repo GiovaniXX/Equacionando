@@ -5,7 +5,6 @@ import classes.EquacaoQuartoGrau;
 import classes.EquacaoSegundoGrau;
 import classes.EquacaoTerceiroGrau;
 import com.formdev.flatlaf.IntelliJTheme;
-import java.awt.Color;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -68,6 +67,7 @@ public class Equacao extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea_Resolucao);
 
         jTextField_A.setEnabled(false);
+        jTextField_A.setSelectionColor(new java.awt.Color(205, 0, 102));
         jTextField_A.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField_AKeyPressed(evt);
@@ -75,6 +75,7 @@ public class Equacao extends javax.swing.JFrame {
         });
 
         jTextField_B.setEnabled(false);
+        jTextField_B.setSelectionColor(new java.awt.Color(205, 0, 102));
 
         jTextField_C.setEnabled(false);
 
@@ -82,15 +83,20 @@ public class Equacao extends javax.swing.JFrame {
 
         jTextField_E.setEnabled(false);
 
-        jLabel2.setText("Valor A");
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("A");
 
-        jLabel3.setText("Valor B");
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("B");
 
-        jLabel4.setText("Valor C");
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("C");
 
-        jLabel5.setText("Valor D");
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("D");
 
-        jLabel6.setText("Valor E");
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("E");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Entre com os valores da equação!");
@@ -127,16 +133,16 @@ public class Equacao extends javax.swing.JFrame {
                                     .addComponent(jTextField_A, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField_B, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                    .addComponent(jLabel3))
+                                    .addComponent(jTextField_B, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jTextField_C, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextField_D, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                    .addComponent(jLabel5))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField_D, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -204,7 +210,7 @@ public class Equacao extends javax.swing.JFrame {
         switch (selectedIndex) {
             case 1 -> {
                 if (jTextField_A.getText().isEmpty() || jTextField_B.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "É necessário entrar com valor nos campos Valor A B", "Aviso", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "É necessário entrar com valor nos campos A B", "Aviso", JOptionPane.WARNING_MESSAGE);
                     jTextField_A.requestFocus();
                     return;
                 }
@@ -215,7 +221,7 @@ public class Equacao extends javax.swing.JFrame {
             }
             case 2 -> {
                 if (jTextField_A.getText().isEmpty() || jTextField_B.getText().isEmpty() || jTextField_C.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "É necessário entrar com valor nos campos Valor A B C", "Aviso", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "É necessário entrar com valor nos campos A B C", "Aviso", JOptionPane.WARNING_MESSAGE);
                     jTextField_A.requestFocus();
                     return;
                 }
@@ -227,7 +233,7 @@ public class Equacao extends javax.swing.JFrame {
             }
             case 3 -> {
                 if (jTextField_A.getText().isEmpty() || jTextField_B.getText().isEmpty() || jTextField_C.getText().isEmpty() || jTextField_D.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "É necessário entrar com valor nos campos Valor A B C D", "Aviso", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "É necessário entrar com valor nos campos A B C D", "Aviso", JOptionPane.WARNING_MESSAGE);
                     jTextField_A.requestFocus();
                     return;
                 }
@@ -240,7 +246,7 @@ public class Equacao extends javax.swing.JFrame {
             }
             case 4 -> {
                 if (jTextField_A.getText().isEmpty() || jTextField_B.getText().isEmpty() || jTextField_C.getText().isEmpty() || jTextField_D.getText().isEmpty() || jTextField_E.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "É necessário entrar com valor nos campos Valor A B C D E", "Aviso", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "É necessário entrar com valor nos campos A B C D E", "Aviso", JOptionPane.WARNING_MESSAGE);
                     jTextField_A.requestFocus();
                     return;
                 }
@@ -266,6 +272,11 @@ public class Equacao extends javax.swing.JFrame {
             case "Equação do 1° Grau" -> {
                 jLabel_Selecionado.setText("ax + b = 0");
                 setCamposHabilitados(true, true, false, false, false);
+                jTextField_A.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_B.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_C.setBackground(new java.awt.Color(45, 45, 48));
+                jTextField_D.setBackground(new java.awt.Color(45, 45, 48));
+                jTextField_E.setBackground(new java.awt.Color(45, 45, 48));
                 jTextField_A.setText("");
                 jTextField_B.setText("");
                 jTextField_C.setText("");
@@ -277,6 +288,11 @@ public class Equacao extends javax.swing.JFrame {
             case "Equação do 2° Grau" -> {
                 jLabel_Selecionado.setText("ax² + bx + c = 0");
                 setCamposHabilitados(true, true, true, false, false);
+                jTextField_A.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_B.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_C.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_D.setBackground(new java.awt.Color(45, 45, 48));
+                jTextField_E.setBackground(new java.awt.Color(45, 45, 48));
                 jTextField_A.setText("");
                 jTextField_B.setText("");
                 jTextField_C.setText("");
@@ -288,6 +304,11 @@ public class Equacao extends javax.swing.JFrame {
             case "Equação do 3° Grau" -> {
                 jLabel_Selecionado.setText("ax³ + bx² + cx + d = 0");
                 setCamposHabilitados(true, true, true, true, false);
+                jTextField_A.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_B.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_C.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_D.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_E.setBackground(new java.awt.Color(45, 45, 48));
                 jTextField_A.setText("");
                 jTextField_B.setText("");
                 jTextField_C.setText("");
@@ -299,6 +320,11 @@ public class Equacao extends javax.swing.JFrame {
             case "Equação do 4° Grau" -> {
                 jLabel_Selecionado.setText("ax⁴ + bx³ + cx² + dx + e = 0");
                 setCamposHabilitados(true, true, true, true, true);
+                jTextField_A.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_B.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_C.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_D.setBackground(new java.awt.Color(60, 63, 65));
+                jTextField_E.setBackground(new java.awt.Color(60, 63, 65));
                 jTextField_A.setText("");
                 jTextField_B.setText("");
                 jTextField_C.setText("");
