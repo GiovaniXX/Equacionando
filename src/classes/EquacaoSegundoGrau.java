@@ -31,13 +31,13 @@ public class EquacaoSegundoGrau {
             } else {
                 double x1 = (-b + Math.sqrt(delta)) / (2 * a);
                 double x2 = (-b - Math.sqrt(delta)) / (2 * a);
-                String resolucao = "Resolução da equação " + a + "x² + " + b + "x + " + c + " = 0:\n";
+                String resolucao = "Resolução da equação:\n " + a + "x² + " + b + "x + " + c + " = 0:\n";
                 resolucao += "Calculando o valor do delta:\n";
                 resolucao += "delta = " + b + "² - 4 * " + a + " * " + c + " = " + delta + "\n";
                 resolucao += "Calculando as raízes da equação:\n";
                 resolucao += "x1 = (-" + b + " + √" + delta + ") / (2 * " + a + ") = " + x1 + "\n";
                 resolucao += "x2 = (-" + b + " - √" + delta + ") / (2 * " + a + ") = " + x2 + "\n";
-                resolucao += "Portanto, as soluções da equação são x1 = " + x1 + " e x2 = " + x2;
+                resolucao += "Portanto, as soluções da equação são:\n x1 = " + x1 + "\n x2 = " + x2;
 
                 return resolucao;
             }
