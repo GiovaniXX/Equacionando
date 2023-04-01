@@ -38,8 +38,7 @@ public class EquacaoPrimeiroGrau {
             resolucao += "6 - 6 = 0\n";
             resolucao += "Logo, essa sentença é verdadeira pois, o resultado da equação é 0\n";
             resolucao += "Sendo sua solução x = 3\n";
-            //resolucao += "Toda equação do 1° Grau tem que ser igual a 0 para que seja verdadeira.";
-            resolucao += GerenciadorCoresRGB.aplicarCor("Toda equação do 1° Grau tem que ser igual a 0 para que seja verdadeira.", 255, 0, 102);
+            resolucao += "Toda equação do 1° Grau tem que ser igual a 0 para que seja verdadeira.";
 
             return resolucao;
         }
